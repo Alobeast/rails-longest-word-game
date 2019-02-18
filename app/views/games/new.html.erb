@@ -1,0 +1,18 @@
+<!-- <h1>Games#new</h1> -->
+<!-- <p>Find me in app/views/games/new.html.erb</p> -->
+
+
+
+<ul>
+<% @letters.each do |letter| %>
+  <li id="letters"><%= letter %></li>
+<% end %>
+</ul>
+
+<p>What's your longest word?</p>
+<form action="score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="word" placeholder="??????">
+  <input type="submit">
+  <%= hidden_field_tag 'choices', @letters %>
+</form>
